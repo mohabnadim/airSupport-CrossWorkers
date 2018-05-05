@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { FlightService } from '../../../services/flights.service';
 import { FlightErrorService } from '../../../services/errorFlights.service';
-
+import { EventEmitter } from 'events';
+import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-flight-list',
   templateUrl: './flight-list.component.html',
   styleUrls: ['./flight-list.component.scss'],
 })
 export class FlightListComponent implements OnInit {
-  flightInfo: any[] = [];
-  errorFlightInfo: any[] = [];
-
-  constructor(private flights: FlightService, private errorFlights: FlightErrorService) {
+  flights: any[] = [];
+  flightinf: any[] = [];
+  errorFlights: any[] = [];
+  @Input() name;
+  // @Output() value: EventEmitter<any> = new EventEmitter();
+  constructor(private flightsServ: FlightService, private errorFlightsServ: FlightErrorService) {
 
    }
 
@@ -20,10 +23,15 @@ export class FlightListComponent implements OnInit {
     this.getFlight();
 
   }
+  getFlightInf(e) {
+    this.flightinf = e ;
+    console.log( this.flightinf);
+
+  }
 getFlight() {
-  this.flights.get().subscribe(data => this.flightInfo = data);
+  this.flightsServ.get().subscribe(data => this.flights = data);
 }
 getErrorFlights() {
-  this.errorFlights.get().subscribe(de => this.errorFlightInfo = de);
+  this.errorFlightsServ.get().subscribe(de => this.errorFlights = de);
 }
 }

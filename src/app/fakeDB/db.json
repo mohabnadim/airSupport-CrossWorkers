@@ -36,11 +36,11 @@
         "flightId": "20200344",
         "trail"  : "123556",
         "terminal": "B15",
-        "shortName" : "QUB15",
+        "shortName" : "QQU15",
         "depAirport": "Doha Airport",
         "depCountry"   : "Qatar",
         "arrAirport" : "GFK Airport",
-        "arrCountry": "America"
+        "arrCountry": "USA"
 
     },  {
         "id"      : "2",
@@ -49,11 +49,23 @@
         "flightId": "203044",
         "trail"  : "34556",
         "terminal": "A5",
-        "shortName" : "LCA5",
+        "shortName" : "LGD5",
         "depAirport": "Frankfurt Airport",
         "depCountry"   : "Germany",
         "arrAirport" : "Copenhagen Airport",
         "arrCountry": "Denmark"
+    },  {
+        "id"      : "3",
+        "name"    : "EgyptAir 2534",
+        "tel"   : "+1-202-555-0175",
+        "flightId": "28944",
+        "trail"  : "2856",
+        "terminal": "D25",
+        "shortName" : "EGI5",
+        "depAirport": "Frankfurt Airport",
+        "depCountry"   : "Germany",
+        "arrAirport" : "Bali Airport",
+        "arrCountry": "Indonesia"
     }
 
 ]

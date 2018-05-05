@@ -22,7 +22,7 @@ $success:#56dc9c;
                     color:$currentColor;
                     font-weight: 600 !important;
                 }
-     body, p {
+     p {
          color:$currentColor;
                     line-height: 1.61803;
                 }
@@ -35,8 +35,10 @@ $success:#56dc9c;
         .d-contents{
             display:contents !important;
         }
-
-
+        body {
+            overflow:hidden;
+        }
+       
 /* Side Nav */
 
 @media(min-width:768px) {
@@ -81,7 +83,7 @@ $success:#56dc9c;
     .side-nav {
 
         transition: all 0.5s ease-in-out 0s;
-        position: fixed;
+    position: absolute;
         width:4%;
         top: 8.5%;
         left:-3%;
