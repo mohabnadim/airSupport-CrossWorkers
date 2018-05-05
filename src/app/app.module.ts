@@ -3,35 +3,35 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
-import { HeaderComponent } from './main/header/header.component';
+
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { FakeDbService } from './services/fakeDB.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MapComponent } from './components/dashboard/map/map.component';
 import { FlightListComponent } from './components/dashboard/flight-list/flight-list.component';
 import { ModalComponent } from './components/dashboard/modal/modal.component';
+import { FlightService } from './services/flights.service';
+import { HttpModule } from '@angular/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FlightErrorService } from './services/errorFlights.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeaderComponent,
     NavigationComponent,
     MapComponent,
     FlightListComponent,
     ModalComponent,
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
-    InMemoryWebApiModule.forRoot(FakeDbService, {
-      delay             : 0,
-      passThruUnknownUrl: true
-  }),
+    HttpModule,
+
   ],
-  providers: [],
+  entryComponents: [FlightListComponent],
+  providers: [FlightService, FlightErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

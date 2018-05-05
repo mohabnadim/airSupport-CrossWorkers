@@ -2,7 +2,7 @@
                            
     <div class="right_icon btn btn-primary pt-3 pb-2">
             <div class="menu-icon-container">
-              <a href="#" id="menu-toggle" class="menu-icon js-menu_toggle closed">
+              <a href="#" id="menu-toggle" class="menu-icon js-menu_toggle closed" (click)="getFlight()">
                 <span class="menu-icon_box">
                   <span class="menu-icon_line menu-icon_line--1"></span>
                   <span class="menu-icon_line menu-icon_line--2"></span>
@@ -42,13 +42,14 @@
               
                 <div id="fliTab" class="panel-collapse in">
                   <div class="panel-body  mt-4 pl-2 pr-2">
-                    <div id="flights  mt-2">
+
+                    <div id="flights  mt-2" *ngFor="let flight of flightInfo">
                       <div class="container d-inline-block">
 
                                             <div class="float-left">
                                               <p>Flight ID 
                                                 <br>
-                                                <b>33322</b>
+                                                <b>{{flight.flightId}}</b>
                                               </p>
                                               
                                             </div>
@@ -56,7 +57,7 @@
                                             <div class="float-right">
                                                 <p>Trail 
                                                   <br>
-                                                  <b>33322</b>
+                                                  <b>{{flight.trail}}</b>
                                                 </p>
                                                 
                                             </div>
@@ -83,71 +84,21 @@
                                                     <div class="border-bottom border-secondary">
                                                         <button class="btn btn-danger  btn-sm float-right flight-info-btn"  data-toggle="modal" data-target="#flightModal">Airport Info</button>
 
-                                                      <a class="text-white">JFK Airport</a>
-                                                      <h6>USA</h6>
+                                                      <a class="text-white">{{flight.depAirport}}</a>
+                                                      <h6>{{flight.depCountry}}</h6>
                                                     </div>
 
                                                     <div>
-                                                        <a class="text-white">Copenhagen</a>
-                                                        <h6>Denmark</h6>
+                                                        <a class="text-white">{{flight.arrAirport}}</a>
+                                                        <h6>{{flight.arrCountry}}</h6>
                                                       </div>
                                       </div>
                         
                       </div>
                     </div>
-                    <div id="flights  mt-2">
-                        <div class="container d-inline-block">
 
-                                              <div class="float-left">
-                                                <p>Flight ID 
-                                                  <br>
-                                                  <b>33322</b>
-                                                </p>
-                                                
-                                              </div>
+                    
 
-                                              <div class="float-right">
-                                                  <p>Trail 
-                                                    <br>
-                                                    <b>33322</b>
-                                                  </p>
-                                                  
-                                              </div>
-
-                        </div>
-                        <div class="row border-bottom border-secondary ml-2 mt-1 mb-2 mr-2">
-                                          <div class="col-2">
-                                                  <div class="flight-progress">
-                                                      <ul>
-                                                          <li class="complete departure">
-                                                              <a href="#"> 
-                                                              </a>
-                                                          </li>
-                          
-                                                          <li class="complete arrival">
-                                                              <a href="#">
-                                                              </a>
-                                                          </li>
-                                                        </ul>
-                                                  </div>
-                                          </div>
-                                        <div class="col-10">
-                                          
-                                                      <div class="border-bottom border-secondary">
-                                                          <button class="btn btn-danger  btn-sm float-right flight-info-btn" data-toggle="modal" data-target="#flightModal">Airport Info</button>
-
-                                                        <a class="text-white">JFK Airport</a>
-                                                        <h6>USA</h6>
-                                                      </div>
-
-                                                      <div>
-                                                          <a class="text-white">Copenhagen</a>
-                                                          <h6>Denmark</h6>
-                                                        </div>
-                                        </div>
-                          
-                        </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -157,27 +108,28 @@
             
                 <div id="errTab" class="panel-collapse ">
                   <div class="panel-body  mt-4 pl-2 pr-2">
-                      <div id="flights mt-2">
+                  
+                      <div id="flights  mt-2" *ngFor="let errflight of errorFlightInfo">
                           <div class="container d-inline-block">
-
+    
                                                 <div class="float-left">
                                                   <p>Flight ID 
                                                     <br>
-                                                    <b>33322</b>
+                                                    <b>{{errflight.flightId}}</b>
                                                   </p>
                                                   
                                                 </div>
-
+    
                                                 <div class="float-right">
                                                     <p>Trail 
                                                       <br>
-                                                      <b>33322</b>
+                                                      <b>{{errflight.trail}}</b>
                                                     </p>
                                                     
                                                 </div>
-
+    
                           </div>
-                          <div class="row border-bottom border-secondary ml-2 mt-1 mb-2 mr-2">
+                          <div class="row border-bottom border-secondary ml-2 mt-0 mb-2 mr-2">
                                             <div class="col-2">
                                                     <div class="flight-progress">
                                                         <ul>
@@ -196,20 +148,21 @@
                                           <div class="col-10">
                                             
                                                         <div class="border-bottom border-secondary">
-                                                            <button class="btn btn-danger  btn-sm float-right flight-info-btn" data-toggle="modal" data-target="#flightModal">Airport Info</button>
-
-                                                          <a class="text-white">JFK Airport</a>
-                                                          <h6>USA</h6>
+                                                            <button class="btn btn-danger  btn-sm float-right flight-info-btn"  data-toggle="modal" data-target="#flightModal">Airport Info</button>
+    
+                                                          <a class="text-white">{{errflight.depAirport}}</a>
+                                                          <h6>{{errflight.depCountry}}</h6>
                                                         </div>
-
+    
                                                         <div>
-                                                            <a class="text-white">Copenhagen</a>
-                                                            <h6>Denmark</h6>
+                                                            <a class="text-white">{{errflight.arrAirport}}</a>
+                                                            <h6>{{errflight.arrCountry}}</h6>
                                                           </div>
                                           </div>
                             
                           </div>
-                        </div>
+                      </div>
+
                   </div>
                 </div>
               </div>
