@@ -3,7 +3,7 @@ $currentColor:#ffffff;
 $enable-rounded:   false;
 $font-family-sans-serif: open sans;
 $secondCurrentColor: #989899;
-$transparent:#fff0;
+$transparent:#ffffff00;
 $danger:#e74c3c;
 $success:#56dc9c;
 
@@ -106,7 +106,6 @@ $success:#56dc9c;
     }
 
     .navbar-nav > li:hover,
-    .navbar-nav > a:focus,
     .navbar-nav > li.active {
         outline: none;
         background-color: #151524 !important;

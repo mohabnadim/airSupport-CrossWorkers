@@ -8,8 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 })
 export class NavigationComponent {
-  navigationModel: any[];
-  navigationModelChangeSubscription: Subscription;
+
 
 
   constructor() {
