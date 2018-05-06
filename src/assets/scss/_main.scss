@@ -18,14 +18,19 @@ $secondCurrentColor: #989899;
 $transparent:#ffffff00;
 $currentColor:#ffffff;
 
+
 //importing core elements
 @import "core_elements";
+
+//importing map styling
+@import "map";
 //importing right side flights
 @import "right_side_bar";
 //importing left side navigation
 @import "left_side_nav";
 
-
+//importing Media Quries for Screens
+@import "media_quries";
 
 
 
