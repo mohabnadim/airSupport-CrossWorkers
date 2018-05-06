@@ -1,3 +1,6 @@
+
+<!-- Flight Info Modal -->
+
 <div class="modal fade" id="flightModal" tabindex="-1" role="dialog" aria-labelledby="flightModalLabel" aria-hidden="true">
     <div class="modal-dialog bg-primary" role="document">
       <div class="modal-content bg-primary">
@@ -21,10 +24,10 @@
        
       </div>
     </div>
-  </div>
+</div>
 
 
-
+<!-- right side tabs -->
 <div  id="right-tabs" class="float-right d-flex flex-column bg-primary right-tabs">
                            
     <div class="right_icon btn btn-primary pt-3 pb-2">
@@ -45,12 +48,16 @@
     </button>
     
 </div>
+
+<!-- flight list -->
+
 <div id="sidebar-wrapper" class="bg-primary " >
      
       
         <div class="container nopadding col-12">
           
             <ul class="nav nav-tabs text-center">
+
               <li class=" nopadding col-6" >
                 <a class="nav-link active" href="#fli" data-toggle="tab">Flights <span *ngIf="flights">({{flights.length}})</span></a>
               </li>
@@ -59,11 +66,13 @@
               </li>
             
             </ul>
-          </div>
+
+        </div>
       
     
         
           <div class="tab-content">
+
             <div class="tab-pane active" id="fli">
               <div class="panel panel-default">
               
@@ -71,9 +80,11 @@
                   <div class="panel-body  mt-4 pl-2 pr-2">
 
                     <div id="flights  mt-2" *ngFor="let flight of flights">
-                      <div class="container d-inline-block">
+
+                      <div class="container col-12 d-inline-block">
 
                                             <div class="float-left">
+
                                               <p>Flight ID 
                                                 <br>
                                                 <b>{{flight.flightId}}</b>
@@ -82,6 +93,7 @@
                                             </div>
 
                                             <div class="float-right">
+
                                                 <p>Trail 
                                                   <br>
                                                   <b>{{flight.trail}}</b>
@@ -90,8 +102,10 @@
                                             </div>
 
                       </div>
+
                       <div class="row border-bottom border-secondary ml-2 mt-0 mb-2 mr-2">
-                                        <div class="col-2">
+
+                                      <div class="col-2">
                                                 <div class="flight-progress">
                                                     <ul>
                                                         <li class="complete departure">
@@ -105,31 +119,36 @@
                                                         </li>
                                                       </ul>
                                                 </div>
-                                        </div>
+                                      </div>
+
                                       <div class="col-10">
                                         
                                                     <div class="border-bottom border-secondary">
+
                                                         <button class="btn btn-danger  btn-sm float-right flight-info-btn" data-toggle="modal" data-target="#flightModal" (click)="getFlightInf(flight)" >Airport Info</button>
 
                                                       <a class="text-white">{{flight.depAirport}}</a>
                                                       <h6>{{flight.depCountry}}</h6>
+
                                                     </div>
 
                                                     <div>
                                                         <a class="text-white">{{flight.arrAirport}}</a>
                                                         <h6>{{flight.arrCountry}}</h6>
-                                                      </div>
+                                                    </div>
+
                                       </div>
                         
                       </div>
-                    </div>
 
-                    
+                    </div>
 
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div class="tab-pane" id="err">
               <div class="panel panel-default">
             
@@ -137,7 +156,8 @@
                   <div class="panel-body  mt-4 pl-2 pr-2">
                   
                       <div id="flights  mt-2" *ngFor="let errflight of errorFlights">
-                          <div class="container d-inline-block">
+
+                          <div class="container col-12 d-inline-block">
     
                                                 <div class="float-left">
                                                   <p>Flight ID 
@@ -156,8 +176,10 @@
                                                 </div>
     
                           </div>
+
                           <div class="row border-bottom border-secondary ml-2 mt-0 mb-2 mr-2">
-                                            <div class="col-2">
+
+                            <div class="col-2">
                                                     <div class="flight-progress">
                                                         <ul>
                                                             <li class="complete departure">
@@ -171,8 +193,8 @@
                                                             </li>
                                                           </ul>
                                                     </div>
-                                            </div>
-                                          <div class="col-10">
+                            </div>
+                            <div class="col-10">
                                             
                                                         <div class="border-bottom border-secondary">
                                                             <button class="btn btn-danger  btn-sm float-right flight-info-btn"  data-toggle="modal" data-target="#flightModal"  (click)="getFlightInf(errflight)">Airport Info</button>
@@ -185,17 +207,27 @@
                                                             <a class="text-white">{{errflight.arrAirport}}</a>
                                                             <h6>{{errflight.arrCountry}}</h6>
                                                           </div>
-                                          </div>
+                            </div>
                             
                           </div>
+
                       </div>
 
                   </div>
                 </div>
+
               </div>
             </div>
           
+            
+          
           </div>
       
-        
+          <div id="collapse-button" class="col fixed-bottom">
+              <a class="float-right mt-auto h4 text-white" href="#">Collapse 
+                   <i class="mdi mdi-chevron-right"></i>
+                
+              </a>
+          </div>
+
 </div>

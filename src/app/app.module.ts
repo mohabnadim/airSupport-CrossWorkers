@@ -11,14 +11,12 @@ import { MapComponent } from './components/dashboard/map/map.component';
 import { FlightListComponent } from './components/dashboard/flight-list/flight-list.component';
 import { FlightService } from './services/flights.service';
 import { HttpModule } from '@angular/http';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlightErrorService } from './services/errorFlights.service';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     NavigationComponent,
     MapComponent,
     FlightListComponent,

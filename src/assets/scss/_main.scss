@@ -1,0 +1,37 @@
+
+//Overriding Bootsrap Colors & Properties
+$primary:#242536;
+$enable-rounded:false;
+$font-family-sans-serif: Open Sans;
+$danger:#e74c3c;
+$success:#56dc9c;
+
+//colors
+$black: #000;
+$color_mirage_approx: #151524;
+$color_chathams_blue_approx: #154e80;
+$black_16: rgba(0,0,0,.16);
+$black_12: rgba(0,0,0,.12);
+$color_bright_gray_approx: #333c4e;
+$color_gray_suit_approx: #bdc2ce;
+$secondCurrentColor: #989899;
+$transparent:#ffffff00;
+$currentColor:#ffffff;
+
+//importing core elements
+@import "core_elements";
+//importing right side flights
+@import "right_side_bar";
+//importing left side navigation
+@import "left_side_nav";
+
+
+
+
+
+
+
+
+
+
+

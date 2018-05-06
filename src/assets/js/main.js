@@ -1,39 +1,23 @@
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
 
 
+//toggling right sidebar   
+$(document).ready(function() {
 
- $(document).ready(function() {
+    // open rightside tab on click & push tabs
 
-    // open rightside tab on hover & push icon
     $(document).on('click','.js-menu_toggle.closed',function(e){
 
-        $(this).removeClass('closed').addClass('opened');
-
-      });
-  
-          // menu icon animation open
-
-          $(document).on('click','.js-menu_toggle.closed',function(e){
-
-            $(this).removeClass('closed').addClass('opened');
+           $(this).removeClass('closed').addClass('opened');
             e.preventDefault(); 
             $("#wrapper").toggleClass("menuDisplayed", true);
             $("#table-icon").toggleClass("menuDisplayed", true); 
             $("#right-tabs").toggleClass("open", true); 
   
-          });
+    });
       
-              // menu icon animation Close
+    //  Close rightside tab on click & put tabs back to default
   
-          $(document).on('click','.js-menu_toggle.opened',function(e){
+    $(document).on('click','.js-menu_toggle.opened',function(e){
   
             $(this).removeClass('opened').addClass('closed');
             $("#wrapper").toggleClass("menuDisplayed", false);
@@ -42,11 +26,49 @@ $('#exampleModal').on('show.bs.modal', function (event) {
             e.stopPropagation();
             
   
-          });
+    });
 
 
          
    
 });
 
+//Expanding right Side Tab
+$(document).ready(function() {
+
+  // Expand rightside tab on click to full width
+
+  $(document).on('click','.open_flights',function(e){
    
+   
+         $(".js-menu_toggle.opened").removeClass('opened').addClass('closed');
+         $("#wrapper").toggleClass("menuDisplayed", false);
+         $("#table-icon").toggleClass("menuDisplayed", false); 
+         $("#right-tabs").toggleClass("open", false); 
+          e.preventDefault(); 
+          $("#wrapper").toggleClass("menuExpanded", true);
+           
+          $("#collapse-button").toggleClass("Expanded", true); 
+          
+
+  });
+    
+  //  collapse rightside tab on click 
+
+  $(document).on('click','.Expanded',function(e){
+
+          $(".open_flights").removeClass('expanded').addClass('minimized');
+          $("#wrapper").toggleClass("menuExpanded", false);
+          $("#table-icon").toggleClass("menuExpanded", false); 
+          $("#right-tabs").toggleClass("Expanded", false); 
+          $("#collapse-button").toggleClass("Expanded", false); 
+          
+          e.stopPropagation();
+          
+
+  });
+
+
+       
+ 
+});   
